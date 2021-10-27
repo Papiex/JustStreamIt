@@ -1,0 +1,160 @@
+header
+{
+    width: 900px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0;
+    background-color: rgb(98, 117, 127);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: whitesmoke;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header h1
+{
+    float: left;
+    width: 40%;
+    margin: 0;
+}
+header h1::before
+{
+    content: "\00a0\00a0\00a0";
+}
+header ul
+{
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    font-size: 20px;
+}
+header nav ul li a:hover
+{
+    color: rgb(233, 59, 59);
+}
+header ul li
+{
+    display: inline-block;
+    margin-left: 30px;
+}
+header a
+{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.titrevideo
+{
+    line-height: 8px;
+}
+.box1
+{
+    width: 865px;
+    margin-top: 30px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: black;
+    padding-left: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.box1 .playbutton
+{
+    list-style-type: none;
+    width: 70px;
+    height: 25px;
+    text-align: center;
+    color: whitesmoke;
+    margin-left: 45px;
+    background-color: rgb(233, 59, 59);
+    border-radius: 15px;
+}
+.box1 .playbutton:hover
+{
+    width: 70px;
+    height: 25px;
+    text-align: center;
+    color: whitesmoke;
+    margin-left: 45px;
+    background-color: rgb(201, 33, 33);
+    border-radius: 15px;    
+}
+.playbutton li a
+{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.playbutton li a:visited
+{
+    list-style-type: none;
+    text-decoration: none;
+}
+.meilleurfilm
+{
+    width: 900px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    text-align: center;    
+}
+.titrecategorie
+{
+    width: 900px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+.imagevideo
+{
+    list-style-type: none;
+}
+.imagevideo li a
+{
+    text-decoration: none;
+    color: rgb(98, 117, 127);
+    position: absolute;
+    top: 225px;
+    left: 385px;
+}
+.imagevideo li a:visited
+{
+    text-decoration: none;
+    color: rgb(98, 117, 127);
+}
+#conteneur1, #conteneur2, #conteneur3, #conteneur4
+{
+    width: 890px;
+    display:flex;
+    justify-content: space-between;
+}
+.element
+{
+    width: 160px;
+    height: 160px;
+    border-style: solid;
+    border-width: 7px;
+}
+.leftarrow, .rightarrow
+{
+    margin-top: 50px;
+    height: auto;
+    width: auto;
+    max-width: 60px;
+    max-height: 60px;
+}
+.leftarrow
+{
+    margin-left: -6px;
+}
+.rightarrow
+{
+    margin-right: -6px;
+}
+.leftarrow:hover, .rightarrow:hover
+{
+    margin-top: 50px;
+    height: auto;
+    width: auto;
+    max-width: 65px;
+    max-height: 65px;
+}
