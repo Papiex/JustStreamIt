@@ -1,4 +1,7 @@
 // 2images.js
+
+
+// Slider
 let images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"];
 let i = 0; // Image actuelle
 
@@ -69,4 +72,17 @@ function setImgPrev(carousel){
         sliderImage3.setAttribute("src", "images/"+images[i+2]) +
         sliderImage4.setAttribute("src", "images/"+images[i+3]);
     }
+}
+
+//Fênetre modale
+
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close")[0];
+
+function openTheModal() {
+    modal.style.display = "block";
+}
+
+function closeTheModal() {
+    modal.style.display = "none";
 }

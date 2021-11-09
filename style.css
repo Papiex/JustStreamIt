@@ -140,6 +140,10 @@ header a
     max-width: 300px;
     max-height: auto;
 }
+.element img:hover
+{
+    cursor: pointer;
+}
 .buttonnext img, .buttonprev img
 {
     max-width: 150px;
@@ -148,4 +152,69 @@ header a
 .buttonnext, .buttonprev
 {
     background: none;
+}
+
+/* Fenêtre modale */
+.modal
+{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal_content
+{
+    background-color: grey;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation: animetest;
+    animation-duration: 0.6s;
+    overflow: auto;
+}
+@keyframes animetest {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.close
+{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus
+{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Contenues Fenêtre modale */
+.modal_movie_title
+{
+    position: fixed;
+    margin-left: 45%;
+    margin-top: -15px;
+}
+.movie_image
+{
+    float: left;
+    height: auto;
+    width: 25%;
+    margin-right: 20px;
+}
+.model_body div
+{
+    margin-top: 20px;
+}
+.resume
+{
+    width: 80%;
 }

@@ -18,6 +18,39 @@
         </nav>
     </header>
 
+    <div id="myModal" class="modal">
+        <div class="modal_content">
+            <div class="modal_header">
+                <span class="close" onclick="closeTheModal()">&times;</span>
+                <h2 class="modal_movie_title">Titre du Film</h2>
+                <div class="movie_image_container">
+                    <img class="movie_image" src="images/1.jpg" alt="">
+                </div>
+                <!-- Image du film ? -->
+            </div>
+            <div class="model_body">
+                <div class="genre">Genre :</div>
+                <div class="date">Date de sortie :</div>
+                <div class="rated">Rated :</div>
+                <div class="imdb">Score Imdb :</div>
+                <div class="realisateur">Realisateur :</div>
+                <div class="acteurs">Liste acteurs :</div>
+                <div class="duration">Durée :</div>
+                <div class="pays">Pays Origine :</div>
+                <div class="boxoffice">Resultat box office :</div>
+                <div class="resume">Résumé :
+                    <p>Malgré sa paralysie, Jake Sully, un ancien marine immobilisé dans un fauteuil roulant,
+                    est resté un combattant au plus profond de son être. Il est recruté pour se rendre à des années-lumière de la Terre,
+                    sur Pandora, où de puissants groupes industriels exploitent un minerai rarissime destiné à résoudre la crise énergétique sur Terre.
+                    Parce que l'atmosphère de Pandora est toxique pour les humains, ceux-ci ont créé le Programme Avatar, qui permet à des " pilotes " humains de lier leur esprit à un avatar,
+                    un corps biologique commandé à distance, capable de survivre dans cette atmosphère létale. Ces avatars sont des hybrides créés génétiquement en croisant l'ADN humain avec celui des Na'vi, les autochtones de Pandora.
+                    Sous sa forme d'avatar, Jake peut de nouveau marcher. On lui confie une mission d'infiltration auprès des Na'vi, devenus un obstacle trop conséquent à l'exploitation du précieux minerai.
+                    Mais tout va changer lorsque Neytiri, une très belle Na'vi, sauve la vie de Jake... </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="box1">
         <h2 class="titrevideo">Titre de la vidéo</h2>
         <nav>
@@ -33,16 +66,16 @@
                 <button class="buttonprev" onclick="prev('carousel1')"><img src="images/leftarrow.png" alt=""></button>
             </div>
             <div class="element">
-                <img class="cover1" src="images/1.jpg" alt="">
+                <img class="cover1" src="images/1.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover2" src="images/2.jpg" alt="">
+                <img class="cover2" src="images/2.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover3" src="images/3.jpg" alt="">
+                <img class="cover3" src="images/3.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover4" src="images/4.jpg" alt="">
+                <img class="cover4" src="images/4.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
                 <button class="buttonnext" onclick="next('carousel1')"><img src="images/rightarrow.png" alt=""></button>
@@ -54,16 +87,16 @@
                 <button class="buttonprev" onclick="prev('carousel2')"><img src="images/leftarrow.png" alt=""></button>
             </div>
             <div class="element">
-                <img class="cover1" src="images/1.jpg" alt="">
+                <img class="cover1" src="images/1.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover2" src="images/2.jpg" alt="">
+                <img class="cover2" src="images/2.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover3" src="images/3.jpg" alt="">
+                <img class="cover3" src="images/3.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover4" src="images/4.jpg" alt="">
+                <img class="cover4" src="images/4.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
                 <button class="buttonnext" onclick="next('carousel2')"><img src="images/rightarrow.png" alt=""></button>
@@ -75,16 +108,16 @@
                 <button class="buttonprev" onclick="prev('carousel3')"><img src="images/leftarrow.png" alt=""></button>
             </div>
             <div class="element">
-                <img class="cover1" src="images/1.jpg" alt="">
+                <img class="cover1" src="images/1.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover2" src="images/2.jpg" alt="">
+                <img class="cover2" src="images/2.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover3" src="images/3.jpg" alt="">
+                <img class="cover3" src="images/3.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover4" src="images/4.jpg" alt="">
+                <img class="cover4" src="images/4.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
                 <button class="buttonnext" onclick="next('carousel3')"><img src="images/rightarrow.png" alt=""></button>
@@ -96,16 +129,16 @@
                 <button class="buttonprev" onclick="prev('carousel4')"><img src="images/leftarrow.png" alt=""></button>
             </div>
             <div class="element">
-                <img class="cover1" src="images/1.jpg" alt="">
+                <img class="cover1" src="images/1.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover2" src="images/2.jpg" alt="">
+                <img class="cover2" src="images/2.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover3" src="images/3.jpg" alt="">
+                <img class="cover3" src="images/3.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
-                <img class="cover4" src="images/4.jpg" alt="">
+                <img class="cover4" src="images/4.jpg" alt="" onclick="openTheModal()">
             </div>
             <div class="element">
                 <button class="buttonnext" onclick="next('carousel4')"><img src="images/rightarrow.png" alt=""></button>
