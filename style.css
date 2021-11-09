@@ -1,6 +1,6 @@
 header
 {
-    width: 900px;
+    width: 2145px;
     height: 60px;
     line-height: 60px;
     margin: 0;
@@ -13,6 +13,7 @@ header
 
 header h1
 {
+    font-size: 3em;
     float: left;
     width: 40%;
     margin: 0;
@@ -28,7 +29,7 @@ header ul
     margin: 0;
     padding: 0;
     width: 50%;
-    font-size: 20px;
+    font-size: 2em;
 }
 header nav ul li a:hover
 {
@@ -46,11 +47,13 @@ header a
 }
 .titrevideo
 {
-    line-height: 8px;
+    font-size: 2em;
+    line-height: 80px;
 }
 .box1
 {
-    width: 865px;
+    width: 2110px;
+    height: 240px;
     margin-top: 30px;
     border-width: 7px;
     border-style: solid;
@@ -61,22 +64,24 @@ header a
 }
 .box1 .playbutton
 {
+    font-size: 1.5em;
     list-style-type: none;
-    width: 70px;
-    height: 25px;
+    width: 80px;
+    height: 30px;
     text-align: center;
     color: whitesmoke;
-    margin-left: 45px;
+    margin-left: 65px;
     background-color: rgb(233, 59, 59);
     border-radius: 15px;
 }
 .box1 .playbutton:hover
 {
-    width: 70px;
-    height: 25px;
+    font-size: 1.5em;
+    width: 80px;
+    height: 30px;
     text-align: center;
     color: whitesmoke;
-    margin-left: 45px;
+    margin-left: 65px;
     background-color: rgb(201, 33, 33);
     border-radius: 15px;    
 }
@@ -92,14 +97,16 @@ header a
 }
 .meilleurfilm
 {
-    width: 900px;
+    font-size: 2em;
+    width: 2145px;
     margin-top: 40px;
     margin-bottom: 60px;
     text-align: center;    
 }
 .titrecategorie
 {
-    width: 900px;
+    font-size: 2em;
+    width: 2145px;
     margin-top: 100px;
     margin-bottom: 80px;
     text-align: center;
@@ -110,51 +117,35 @@ header a
 }
 .imagevideo li a
 {
+    font-size: 1.5em;
     text-decoration: none;
     color: rgb(98, 117, 127);
     position: absolute;
-    top: 225px;
-    left: 385px;
+    top: 280px;
+    left: 1000px;
 }
 .imagevideo li a:visited
 {
     text-decoration: none;
     color: rgb(98, 117, 127);
 }
-#conteneur1, #conteneur2, #conteneur3, #conteneur4
+.carousel1, .carousel2, .carousel3, .carousel4
 {
-    width: 890px;
-    display:flex;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
-.element
+.element img
 {
-    width: 160px;
-    height: 160px;
-    border-style: solid;
-    border-width: 7px;
+    max-width: 300px;
+    max-height: auto;
 }
-.leftarrow, .rightarrow
+.buttonnext img, .buttonprev img
 {
-    margin-top: 50px;
-    height: auto;
-    width: auto;
-    max-width: 60px;
-    max-height: 60px;
+    max-width: 150px;
+    max-height: auto;
 }
-.leftarrow
+.buttonnext, .buttonprev
 {
-    margin-left: -6px;
-}
-.rightarrow
-{
-    margin-right: -6px;
-}
-.leftarrow:hover, .rightarrow:hover
-{
-    margin-top: 50px;
-    height: auto;
-    width: auto;
-    max-width: 65px;
-    max-height: 65px;
+    background: none;
 }

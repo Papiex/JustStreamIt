@@ -1,74 +1,117 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <!-- tête de la page -->
-        <meta charset="utf-8" />
-        <link rel=stylesheet href="style.css" />
-        <title>JustStreamIt</title>
-
-    </head>
+<head>
+    <!-- tête de la page -->
+    <meta charset="utf-8" />
+    <title>JustStreamIt</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" async></script>
+</head>
     <body>
-        <header>
-            <h1 id="titletop">JustStreamIt</h1>
-            <nav>
-                <ul class="menu">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Catégories</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+        <h1 id="titletop">JustStreamIt</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Catégories</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="box1">
-            <h2 class="titrevideo">Titre de la vidéo</h2>
-            <nav>
-                <div class="playbutton"><li><a href="#">Play</a></li></div>
-                <div class="imagevideo"><li><a href="#">Image de la vidéo</a></li></div>
-            </nav>
-            <div class="vide"></div>
-        </div>
+    <div class="box1">
+        <h2 class="titrevideo">Titre de la vidéo</h2>
+        <nav>
+            <div class="playbutton"><li><a href="#">Play</a></li></div>
+            <div class="imagevideo"><li><a href="#">Image de la vidéo</a></li></div>
+        </nav>
+    </div>
 
+    <div class="container">
         <h2 class="meilleurfilm">Films les mieux notés</h2>
-    
-        <div id="conteneur1">
-            <div class="imgelement"><img src="images/leftarrow.png" class="leftarrow" alt="left"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="imgelement"><img src="images/rightarrow.png" class="rightarrow" alt="right"> </div>
+        <div class="carousel1">
+            <div class="element">
+                <button class="buttonprev" onclick="prev('carousel1')"><img src="images/leftarrow.png" alt=""></button>
+            </div>
+            <div class="element">
+                <img class="cover1" src="images/1.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover2" src="images/2.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover3" src="images/3.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover4" src="images/4.jpg" alt="">
+            </div>
+            <div class="element">
+                <button class="buttonnext" onclick="next('carousel1')"><img src="images/rightarrow.png" alt=""></button>
+            </div>
         </div>
-
-        <h2 class="titrecategorie">Catégorie 1</h2>
-
-        <div id="conteneur2">
-            <div class="imgelement"><img src="images/leftarrow.png" class="leftarrow" alt="left"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="imgelement"><img src="images/rightarrow.png" class="rightarrow" alt="right"></div>
+        <h2 class="meilleurfilm">Catégorie 1</h2>
+        <div class="carousel2">
+            <div class="element">
+                <button class="buttonprev" onclick="prev('carousel2')"><img src="images/leftarrow.png" alt=""></button>
+            </div>
+            <div class="element">
+                <img class="cover1" src="images/1.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover2" src="images/2.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover3" src="images/3.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover4" src="images/4.jpg" alt="">
+            </div>
+            <div class="element">
+                <button class="buttonnext" onclick="next('carousel2')"><img src="images/rightarrow.png" alt=""></button>
+            </div>
         </div>
-
-        <h2 class="titrecategorie">Catégorie 2</h2>
-
-        <div id="conteneur3">
-            <div class="imgelement"><img src="images/leftarrow.png" class="leftarrow" alt="left"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="imgelement"><img src="images/rightarrow.png" class="rightarrow" alt="right"></div>
+        <h2 class="meilleurfilm">Catégorie 2</h2>
+        <div class="carousel3">
+            <div class="element">
+                <button class="buttonprev" onclick="prev('carousel3')"><img src="images/leftarrow.png" alt=""></button>
+            </div>
+            <div class="element">
+                <img class="cover1" src="images/1.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover2" src="images/2.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover3" src="images/3.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover4" src="images/4.jpg" alt="">
+            </div>
+            <div class="element">
+                <button class="buttonnext" onclick="next('carousel3')"><img src="images/rightarrow.png" alt=""></button>
+            </div>
         </div>
-
-        <h2 class="titrecategorie">Catégorie 3</h2>
-
-        <div id="conteneur4">
-            <div class="imgelement"><img src="images/leftarrow.png" class="leftarrow" alt="left"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="element"></div>
-            <div class="imgelement"><img src="images/rightarrow.png" class="rightarrow" alt="right"></div>
+        <h2 class="meilleurfilm">Catégorie 3</h2>
+        <div class="carousel4">
+            <div class="element">
+                <button class="buttonprev" onclick="prev('carousel4')"><img src="images/leftarrow.png" alt=""></button>
+            </div>
+            <div class="element">
+                <img class="cover1" src="images/1.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover2" src="images/2.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover3" src="images/3.jpg" alt="">
+            </div>
+            <div class="element">
+                <img class="cover4" src="images/4.jpg" alt="">
+            </div>
+            <div class="element">
+                <button class="buttonnext" onclick="next('carousel4')"><img src="images/rightarrow.png" alt=""></button>
+            </div>
         </div>
+    </div>
+
     </body>
 </html>
