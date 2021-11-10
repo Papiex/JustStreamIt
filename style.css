@@ -244,3 +244,78 @@ header a
 {
     width: 80%;
 }
+/* 1920x1080 */
+@media (max-width: 1920px)
+{
+    .top_resume
+    {
+        font-size: 0.8em;
+        margin-top: -30px;
+        margin-left: -35px;
+    }
+    .titre_video
+    {
+        font-size: 2em;
+        margin-left: 280px;
+    }
+    .play
+    {
+        font-size: 1em;
+        display: block;
+        margin-left: 340px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .element img
+    {
+        max-width: 230px;
+        max-height: auto;
+    }
+    .buttonnext img, .buttonprev img
+    {
+        max-width: 80px;
+        max-height: auto;
+    }
+    .buttonnext img:hover, .buttonprev img:hover
+    {
+        max-width: 90px;
+        max-height: auto;
+    }
+    .titre_categorie, .meilleurfilm
+    {
+        font-size: 1.5em;
+    }
+    .modal
+    {
+    top: -27%;
+    }
+    .modal_content
+    {
+        font-size: 0.8em;
+    }
+    .movie_image
+    {
+        height: auto;
+        width: 35%;
+    }
+    header
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 85%;
+        height: 40px;
+        line-height: 40px;
+        background-color: rgb(26, 26, 26);
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    header h1
+    {
+        font-size: 2em;
+    }
+    header ul
+    {
+        font-size: 1.5em;
+    }
+}
