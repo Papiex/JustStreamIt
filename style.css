@@ -45,90 +45,44 @@ header a
     text-decoration: none;
     color: whitesmoke;
 }
-.titrevideo
-{
-    font-size: 2em;
-    line-height: 80px;
-}
+/* Box meilleur film */
 .box1
 {
-    width: 2110px;
-    height: 240px;
-    margin-top: 30px;
-    border-width: 7px;
-    border-style: solid;
-    border-color: black;
-    padding-left: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    background-color: darkgray;
+    display: flex;
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: solid;
 }
-.box1 .playbutton
+.top_film
 {
-    font-size: 1.5em;
-    list-style-type: none;
-    width: 80px;
-    height: 30px;
-    text-align: center;
-    color: whitesmoke;
-    margin-left: 65px;
-    background-color: rgb(233, 59, 59);
-    border-radius: 15px;
+    width: 30%;
+    height: auto;
 }
-.box1 .playbutton:hover
+.titre_video
 {
-    font-size: 1.5em;
-    width: 80px;
-    height: 30px;
-    text-align: center;
-    color: whitesmoke;
-    margin-left: 65px;
-    background-color: rgb(201, 33, 33);
-    border-radius: 15px;    
-}
-.playbutton li a
-{
-    text-decoration: none;
-    color: whitesmoke;
-}
-.playbutton li a:visited
-{
-    list-style-type: none;
-    text-decoration: none;
+    margin-left: 10px;
+    font-size: 3em;
+    font-weight: bold;
 }
 .meilleurfilm
 {
     font-size: 2em;
     width: 2145px;
-    margin-top: 40px;
-    margin-bottom: 60px;
+    margin-top: 5%;
+    margin-bottom: 100px;
     text-align: center;    
 }
-.titrecategorie
+.titre_categorie
 {
     font-size: 2em;
     width: 2145px;
-    margin-top: 100px;
-    margin-bottom: 80px;
+    margin-top: 150px;
+    margin-bottom: 100px;
     text-align: center;
 }
-.imagevideo
-{
-    list-style-type: none;
-}
-.imagevideo li a
-{
-    font-size: 1.5em;
-    text-decoration: none;
-    color: rgb(98, 117, 127);
-    position: absolute;
-    top: 280px;
-    left: 1000px;
-}
-.imagevideo li a:visited
-{
-    text-decoration: none;
-    color: rgb(98, 117, 127);
-}
+/* Carousels */
 .carousel1, .carousel2, .carousel3, .carousel4
 {
     display: flex;
@@ -143,6 +97,15 @@ header a
 .element img:hover
 {
     cursor: pointer;
+}
+/*Bouton de naviguation*/
+.buttonnext
+{
+    margin-right: 200px;
+}
+.buttonprev
+{
+    margin-left: 200px;
 }
 .buttonnext img, .buttonprev img
 {
