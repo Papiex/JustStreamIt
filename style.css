@@ -125,6 +125,7 @@ header a
 .element img:hover
 {
     cursor: pointer;
+    transform: scale(1.1);
 }
 /* Carousels couleurs de fond */
 .color_box
