@@ -124,4 +124,7 @@ async function displayBestMovie()
 
 displayBestMovie();
 
+displayBestMoviesCarousel()
+
+displayBestMoviesAction()
 
