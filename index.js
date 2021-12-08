@@ -1,61 +1,3 @@
-// Slider
-let actual_image = 0;
-
-function prev(carousel, movies_list)
-// Slide previous image on the selected carousel on click
-{
-    if(actual_image <= 0) actual_image = 7;
-        actual_image--;
-        setImg(carousel, movies_list);
-}
-
-function next(carousel, movies_list)
-// Slide next image on the selected carousel on click
-{
-    if(actual_image >= 7-1) actual_image = -1;
-        actual_image++;
-        setImg(carousel, movies_list)
-}
-
-function setImg(carousel, movies_list)
-// Put the four images in the right order when click on next or previous 
-{
-    let sliderImage1 = document.querySelector("."+ carousel + " img.cover1");
-    let sliderImage2 = document.querySelector("."+ carousel + " img.cover2");
-    let sliderImage3 = document.querySelector("."+ carousel + " img.cover3");
-    let sliderImage4 = document.querySelector("."+ carousel + " img.cover4");
-
-    if(actual_image == 4){
-        sliderImage1.setAttribute("src", movies_list[actual_image].image_url);
-        sliderImage2.setAttribute("src", movies_list[actual_image+1].image_url);
-        sliderImage3.setAttribute("src", movies_list[actual_image+2].image_url);
-        sliderImage4.setAttribute("src", movies_list[actual_image-4].image_url);
-
-    } else if(actual_image == 5){
-        sliderImage1.setAttribute("src", movies_list[actual_image].image_url);
-        sliderImage2.setAttribute("src", movies_list[actual_image+1].image_url);
-        sliderImage3.setAttribute("src", movies_list[actual_image-5].image_url);
-        sliderImage4.setAttribute("src", movies_list[actual_image-4].image_url);
-
-    } else if(actual_image == 6){
-        sliderImage1.setAttribute("src", movies_list[actual_image].image_url);
-        sliderImage2.setAttribute("src", movies_list[actual_image-6].image_url);
-        sliderImage3.setAttribute("src", movies_list[actual_image-5].image_url);
-        sliderImage4.setAttribute("src", movies_list[actual_image-4].image_url);
-
-    } else {
-        sliderImage1.setAttribute("src", movies_list[actual_image].image_url);
-        sliderImage2.setAttribute("src", movies_list[actual_image+1].image_url);
-        sliderImage3.setAttribute("src", movies_list[actual_image+2].image_url);
-        sliderImage4.setAttribute("src", movies_list[actual_image+3].image_url);
-    }
-}
-
-// Functions that display movie(s)
-const PRINCIPAL_URL = "http://localhost:8000/api/v1/titles/";
-let best_movie_location = document.getElementsByClassName("box1")[0];
-let best_carousel_movies_location = document.getElementsByClassName("carousel1")[0];
-
 async function getInfoUrl(url)
 // Get json data of request
 {
@@ -64,81 +6,39 @@ async function getInfoUrl(url)
     return data;
 }
 
-function showDataBestMovie(data, insert_in)
-// Show data of a single movie
-{
-    let to_insert = 
-        `<img class="top_film" src="${data.image_url}" alt="">
-          <div class="element_box">
-           <div class="titre_video">${data.title}</div>
-           <div class="play">Play</div>
-           <div class="top_resume">
-            <p>${data.long_description}</p>
-           </div>
-          </div>`;
-    
-    insert_in.innerHTML = to_insert;
-}
-
-async function getBestMovies()
+async function getBestMovies(genre)
 // Show the seventh best movies
 {
-    let imdb_min = 10;
-    let value_to_decrement = 0.1;
-    let results = [];
-    let url = PRINCIPAL_URL + "?imdb_score_min=" + String(imdb_min);
+
+    let url = PRINCIPAL_URL + String(genre);
     let search_result = await getInfoUrl(url);
+    search_result = search_result.results
+    search_result.splice(7, 3)
 
-    while (search_result.count <= 6) {
-        imdb_min -= value_to_decrement;
-        url = PRINCIPAL_URL + "?imdb_score_min=" + String(imdb_min);
-        search_result = await getInfoUrl(url);
-    }
-
-    for (let result of search_result.results) {
-        results.push(result)
-    }
-
-    if (search_result.count > 5) {
-        let url_next_page = search_result.next;
-        search_result = await getInfoUrl(url_next_page)
-        for (let result of search_result.results) {
-            results.push(result)
-        }
-    }
-
-    results.sort((a, b) => b.imdb_score-a.imdb_score);
-    return results;
+    return search_result;
 }
 
-const bestMovies = async () => {
-    const BEST_MOVIES_RESULT = await getBestMovies();
-    createImgElements(best_carousel_movies_location, BEST_MOVIES_RESULT);
-    console.log(BEST_MOVIES_RESULT)
-}
-
-
-async function createImgElements(location, movies_list)
+function createImgElements(location)
 // Create four div with "element" class at the location
 {
     let div = document.createElement("div");
     div.classList.add("element");
     let button_prev = document.createElement("button");
     button_prev.classList.add("buttonprev");
-    button_prev.setAttribute("onclick", `prev(${location})`);
+    button_prev.setAttribute("onclick", `prev()`);
     let img = document.createElement("img")
     img.setAttribute("src", "images/leftarrow.png");
     button_prev.appendChild(img);
     div.appendChild(button_prev);
     location.appendChild(div);
 
-    for (let step = 0; step < 4; step++) {
+    for (let step = 0; step < 8; step++) {
         let div = document.createElement("div");
         div.classList.add("element");
         let img = document.createElement("img");
-        img.classList.add("cover" + String(step + 1));
+        img.setAttribute("id", "cover" + String(step + 1));
         img.setAttribute("onclick", "openTheModal()");
-        img.setAttribute("src", `${movies_list[step].image_url}`)
+        img.setAttribute("src", ``)
         div.appendChild(img);
         location.appendChild(div);
     }
@@ -147,29 +47,160 @@ async function createImgElements(location, movies_list)
     div.classList.add("element");
     let button_next = document.createElement("button");
     button_next.classList.add("buttonnext");
-    button_next.setAttribute("onclick", `next(${location})`);
+    button_next.setAttribute("onclick", `next()`);
     img = document.createElement("img")
     img.setAttribute("src", "images/rightarrow.png");
     button_next.appendChild(img);
     div.appendChild(button_next);
     location.appendChild(div);
+
+    let movies_list = Array.from(location.querySelectorAll("[id^='cover']"));
+    hideElements(movies_list);
+
+    location.getElementsByClassName("buttonnext")[0].onclick = function (){slideNext(movies_list, location);};
+    location.getElementsByClassName("buttonprev")[0].onclick = function (){slidePrev(movies_list, location);};
+
+    return movies_list;
 }
 
+function createDivWithClass(string_class)
+// create div with class in parameters
+{
+    let div = document.createElement("div");
+    div.classList.add(String(string_class));
+    return div;
+}
 
-//Fênetre modale
-let modal = document.getElementById("my_modal");
-let span = document.getElementsByClassName("close")[0];
+function createBestMovieElement(location)
+// Create tag for showing the best movie
+{
+    let img = document.createElement("img");
+    img.classList.add("top_film");
+    location.appendChild(img);
+    let div_box = createDivWithClass("element_box");
+    location.appendChild(div_box);
+    let div = createDivWithClass("titre_video");
+    div_box.appendChild(div);
+    div = createDivWithClass("play");
+    div_box.appendChild(div);
+    let div_resume = createDivWithClass("top_resume");
+    div_box.appendChild(div_resume);
+    let p_text = document.createElement("p");
+    div_resume.appendChild(p_text);
 
-function openTheModal()
+}
+
+async function bestMovies(html_elements, genre)
+// replace the content of src by the requested best movies image url and assign Openthemodal onclick function too
+{
+    const BEST_MOVIES_RESULT = await getBestMovies(genre);
+    let number = 0;
+    html_elements.pop()
+    for (let element of html_elements) {
+        element.setAttribute("src", BEST_MOVIES_RESULT[number].image_url);
+        let movie_url = BEST_MOVIES_RESULT[number].url;
+        element.onclick = function (){openTheModal(movie_url);};
+        number++;
+    }
+}
+
+async function showTopMovie(genre)
+// Request the best Movie and assign them data to the best movie box html.
+{
+    const BEST_MOVIES_RESULT = await getBestMovies(genre);
+    const MOVIE_RESULT = await getInfoUrl(BEST_MOVIES_RESULT[0].url)
+    console.log(MOVIE_RESULT)
+    document.getElementsByClassName("top_film")[0].setAttribute("src", MOVIE_RESULT.image_url);
+    document.getElementsByClassName("top_resume")[0].getElementsByTagName("p")[0].innerHTML = MOVIE_RESULT.long_description;
+    document.getElementsByClassName("titre_video")[0].innerHTML = MOVIE_RESULT.title;
+}
+
+function slidePrev(movies_list, location)
+//Slide prev image
+{
+    for (let step = 0; step < 8; step++) {
+        movies_list = swapNodes(movies_list[0], movies_list[step], location);
+    }
+    swapNodes(movies_list[0], movies_list[7], location);
+}
+
+function slideNext(movies_list, location)
+// Slide next image
+{
+    movies_list = Array.from(location.querySelectorAll("[id^='cover']"));
+    for (let step = 7; step > 0; step--) {
+        movies_list = swapNodes(movies_list[step], movies_list[0], location);
+    }
+    swapNodes(movies_list[6], movies_list[7], location);
+}
+
+function swapNodes(a, b, location)
+// Swap two elements.
+{
+    let aparent = a.parentNode;
+    let asibling = a.nextSibling === b ? a : a.nextSibling; // var = Condition ? Si vrai : Si faux
+    b.parentNode.insertBefore(a, b);
+    aparent.insertBefore(b, asibling);
+    let elements_location = Array.from(location.querySelectorAll("[id^='cover']"));
+    return elements_location;
+}
+
+function hideElements(movies_list)
+// hide elements of movies list 4 => 7.
+{
+    for (let element of movies_list.slice(4, 8)) {
+        element.parentNode.style.display = "none";
+    }
+}
+
+//display movie(s)
+const PRINCIPAL_URL = "http://localhost:8000/api/v1/titles/";
+let best_movie_location = document.getElementsByClassName("box1")[0];
+let best_carousel_movies_location = document.getElementsByClassName("carousel1")[0];
+let best_carousel_action_location = document.getElementsByClassName("carousel2")[0];
+let best_carousel_adventure_location = document.getElementsByClassName("carousel3")[0];
+let best_carousel_thriller_location = document.getElementsByClassName("carousel4")[0];
+
+let best_movie = createBestMovieElement(best_movie_location);
+let best_movies_elements = createImgElements(best_carousel_movies_location);
+let best_action_elements = createImgElements(best_carousel_action_location);
+let best_adventure_elements = createImgElements(best_carousel_adventure_location);
+let best_thriller_elements = createImgElements(best_carousel_thriller_location);
+
+showTopMovie(genre="?sort_by=-imdb_score&page_size=10&page=1");
+bestMovies(best_movies_elements, genre="?sort_by=-imdb_score&page_size=10&page=1");
+bestMovies(best_action_elements, genre="?sort_by=-imdb_score&page_size=10&page=1&genre_contains=Action");
+bestMovies(best_adventure_elements, genre="?sort_by=-imdb_score&page_size=10&page=1&genre_contains=Adventure");
+bestMovies(best_thriller_elements, genre="?sort_by=-imdb_score&page_size=10&page=1&genre_contains=Thriller");
+
+// Modal box
+async function openTheModal(url)
 // Open a modal box
 {
+    let modal = document.getElementById("my_modal");
     modal.style.display = "block";
+    response = await getInfoUrl(url);
+    // boucle for dictionnaire
+    modal.getElementsByClassName("modal_movie_title")[0].innerHTML = (response.title);
+
+    modal.getElementsByClassName("movie_image")[0].setAttribute("src", response.image_url)
+
+    modal.getElementsByClassName("genre")[0].innerHTML += (" : " + response.genres);
+    modal.getElementsByClassName("date")[0].innerHTML += (" : " + response.year);
+    modal.getElementsByClassName("rated")[0].innerHTML += (" : " + response.rated);
+    modal.getElementsByClassName("imdb")[0].innerHTML += (" : " + response.imdb_score);
+    modal.getElementsByClassName("realisateur")[0].innerHTML += (" : " + response.directors);
+    modal.getElementsByClassName("acteurs")[0].innerHTML += (" : " + response.actors);
+    modal.getElementsByClassName("duration")[0].innerHTML += (" : " + response.duration + " min");
+    modal.getElementsByClassName("pays")[0].innerHTML += (" : " + response.countries);
+    modal.getElementsByClassName("boxoffice")[0].innerHTML += (" : " + response.worldwide_gross_income);
+    
+    modal.getElementsByClassName("resume")[0].getElementsByTagName("p")[0].innerHTML += (response.long_description);
 }
 
 function closeTheModal()
 // Close the modal box
 {
+    let modal = document.getElementById("my_modal");
     modal.style.display = "none";
 }
-
-bestMovies();
