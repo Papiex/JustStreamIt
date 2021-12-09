@@ -82,6 +82,7 @@ function createBestMovieElement(location)
     let div = createDivWithClass("titre_video");
     div_box.appendChild(div);
     div = createDivWithClass("play");
+    div.innerHTML = "Play";
     div_box.appendChild(div);
     let div_resume = createDivWithClass("top_resume");
     div_box.appendChild(div_resume);
@@ -180,22 +181,18 @@ async function openTheModal(url)
     let modal = document.getElementById("my_modal");
     modal.style.display = "block";
     response = await getInfoUrl(url);
-    // boucle for dictionnaire
-    modal.getElementsByClassName("modal_movie_title")[0].innerHTML = (response.title);
 
+    modal.getElementsByClassName("modal_movie_title")[0].innerHTML = (response.title);
     modal.getElementsByClassName("movie_image")[0].setAttribute("src", response.image_url)
 
-    modal.getElementsByClassName("genre")[0].innerHTML += (" : " + response.genres);
-    modal.getElementsByClassName("date")[0].innerHTML += (" : " + response.year);
-    modal.getElementsByClassName("rated")[0].innerHTML += (" : " + response.rated);
-    modal.getElementsByClassName("imdb")[0].innerHTML += (" : " + response.imdb_score);
-    modal.getElementsByClassName("realisateur")[0].innerHTML += (" : " + response.directors);
-    modal.getElementsByClassName("acteurs")[0].innerHTML += (" : " + response.actors);
-    modal.getElementsByClassName("duration")[0].innerHTML += (" : " + response.duration + " min");
-    modal.getElementsByClassName("pays")[0].innerHTML += (" : " + response.countries);
-    modal.getElementsByClassName("boxoffice")[0].innerHTML += (" : " + response.worldwide_gross_income);
-    
-    modal.getElementsByClassName("resume")[0].getElementsByTagName("p")[0].innerHTML += (response.long_description);
+    for (let div_element of document.getElementById("model_body").querySelectorAll("div")) {
+        console.log(div_element)
+        if (div_element.className === "long_description") {
+            modal.getElementsByClassName("long_description")[0].getElementsByTagName("p")[0].innerHTML += (response.long_description);
+        } else {
+            div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + response[div_element.className]);
+        }
+    }
 }
 
 function closeTheModal()
