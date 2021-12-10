@@ -94,13 +94,32 @@ html {
 
 .box1 .play {
   font-size: 1.5em;
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.699);
   border-radius: 15px;
   margin-top: 20px;
   margin-left: 460px;
   margin-right: 100px;
   text-align: center;
   cursor: pointer;
+}
+
+.box1 .play:hover {
+  background-color: rgba(255, 0, 0, 0.514);
+}
+
+.box1 .info {
+  font-size: 1.5em;
+  background-color: rgba(128, 128, 128, 0.808);
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-left: 460px;
+  margin-right: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.box1 .info:hover {
+  background-color: rgba(128, 128, 128, 0.541);
 }
 
 .box1 .top_resume {

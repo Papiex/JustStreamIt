@@ -85,13 +85,29 @@ $font_size: 1.2em, 1.5em, 2em, 3em;
     }
     .play {
         font-size: nth($font_size, 2);
-        background-color: red;
+        background-color: rgba(255, 0, 0, 0.699);
         border-radius: 15px;
         margin-top: 20px;
         margin-left: 460px;
         margin-right: 100px;
         text-align: center;
         cursor: pointer;
+        &:hover {
+            background-color: rgba(255, 0, 0, 0.514);
+        }
+    }
+    .info {
+        font-size: nth($font_size, 2);
+        background-color: rgba(128, 128, 128, 0.808);
+        border-radius: 15px;
+        margin-top: 20px;
+        margin-left: 460px;
+        margin-right: 100px;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.541);
+        }
     }
     .top_resume {
         font-size: nth($font_size, 1);

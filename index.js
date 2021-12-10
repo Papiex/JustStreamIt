@@ -84,6 +84,10 @@ function createBestMovieElement(location)
     div = createDivWithClass("play");
     div.innerHTML = "Play";
     div_box.appendChild(div);
+    div = createDivWithClass("info")
+    div.innerHTML = "Info";
+    div.setAttribute("onclick", "");
+    div_box.appendChild(div);
     let div_resume = createDivWithClass("top_resume");
     div_box.appendChild(div_resume);
     let p_text = document.createElement("p");
@@ -111,9 +115,11 @@ async function showTopMovie(genre)
     const BEST_MOVIES_RESULT = await getBestMovies(genre);
     const MOVIE_RESULT = await getInfoUrl(BEST_MOVIES_RESULT[0].url)
     let movie = document.getElementsByClassName("top_film")[0];
+    let info_movie = document.getElementsByClassName("info")[0];
     movie.setAttribute("src", MOVIE_RESULT.image_url);
     movie.setAttribute("onclick", "");
     movie.onclick = function (){openTheModal(MOVIE_RESULT.url)};
+    info_movie.onclick = function (){openTheModal(MOVIE_RESULT.url)};
     document.getElementsByClassName("top_resume")[0].getElementsByTagName("p")[0].innerHTML = MOVIE_RESULT.long_description;
     document.getElementsByClassName("titre_video")[0].innerHTML = MOVIE_RESULT.title;
 }
@@ -190,7 +196,7 @@ async function openTheModal(url)
     for (let div_element of document.getElementById("model_body").querySelectorAll("div")) {
         console.log(div_element)
         if (div_element.className === "long_description") {
-            modal.getElementsByClassName("long_description")[0].getElementsByTagName("p")[0].innerHTML += (response.long_description);
+            modal.getElementsByClassName("long_description")[0].getElementsByTagName("p")[0].innerHTML = (response.long_description);
         } else {
             div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + response[div_element.className]);
         }
