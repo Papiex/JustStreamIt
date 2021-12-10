@@ -27,6 +27,6 @@ git checkout develop
 - When the API is launched, go to the root of the JusStreamIt repository and launch the file named index.html.
 
 ## Preview
-![image](https://user-images.githubusercontent.com/81369778/145394851-bf973ef4-29b4-40e9-9359-be9f9009b14d.png)
+![image](https://user-images.githubusercontent.com/81369778/145617775-4e2d0ba3-e02b-4362-855b-4db134ffb00f.png)
 ![image](https://user-images.githubusercontent.com/81369778/145394350-b4f6c819-4c1d-4f60-9fa5-40c74572f74d.png)
 ![image](https://user-images.githubusercontent.com/81369778/145394598-3fb8d4c7-9368-4e0d-91e6-459e2a2d5e8c.png)
