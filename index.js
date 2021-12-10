@@ -162,6 +162,35 @@ function hideElements(movies_list)
     }
 }
 
+async function openTheModal(url)
+// Open a modal box
+{
+    let modal = document.getElementById("my_modal");
+    modal.style.display = "block";
+    response = await getInfoUrl(url);
+
+    modal.getElementsByClassName("modal_movie_title")[0].innerHTML = (response.title);
+    modal.getElementsByClassName("movie_image")[0].setAttribute("src", response.image_url)
+
+    for (let div_element of document.getElementById("model_body").querySelectorAll("div")) {
+        console.log(div_element)
+        if (div_element.className === "long_description") {
+            modal.getElementsByClassName("long_description")[0].getElementsByTagName("p")[0].innerHTML = (response.long_description);
+        } else if (div_element.className === "duration") {
+            div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + response[div_element.className] + " min");
+        } else {
+            div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + response[div_element.className]);
+        }
+    }
+}
+
+function closeTheModal()
+// Close the modal box
+{
+    let modal = document.getElementById("my_modal");
+    modal.style.display = "none";
+}
+
 //display movie(s)
 const PRINCIPAL_URL = "http://localhost:8000/api/v1/titles/";
 let best_movie_location = document.getElementsByClassName("box1")[0];
@@ -181,31 +210,3 @@ bestMovies(best_movies_elements, genre="?sort_by=-imdb_score&page_size=10&page=1
 bestMovies(best_action_elements, genre="?sort_by=-imdb_score&page_size=10&page=1&genre_contains=Action");
 bestMovies(best_adventure_elements, genre="?sort_by=-imdb_score&page_size=10&page=1&genre_contains=Adventure");
 bestMovies(best_thriller_elements, genre="?sort_by=-imdb_score&page_size=10&page=1&genre_contains=Thriller");
-
-// Modal box
-async function openTheModal(url)
-// Open a modal box
-{
-    let modal = document.getElementById("my_modal");
-    modal.style.display = "block";
-    response = await getInfoUrl(url);
-
-    modal.getElementsByClassName("modal_movie_title")[0].innerHTML = (response.title);
-    modal.getElementsByClassName("movie_image")[0].setAttribute("src", response.image_url)
-
-    for (let div_element of document.getElementById("model_body").querySelectorAll("div")) {
-        console.log(div_element)
-        if (div_element.className === "long_description") {
-            modal.getElementsByClassName("long_description")[0].getElementsByTagName("p")[0].innerHTML = (response.long_description);
-        } else {
-            div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + response[div_element.className]);
-        }
-    }
-}
-
-function closeTheModal()
-// Close the modal box
-{
-    let modal = document.getElementById("my_modal");
-    modal.style.display = "none";
-}
