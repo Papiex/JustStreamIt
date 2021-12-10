@@ -110,8 +110,10 @@ async function showTopMovie(genre)
 {
     const BEST_MOVIES_RESULT = await getBestMovies(genre);
     const MOVIE_RESULT = await getInfoUrl(BEST_MOVIES_RESULT[0].url)
-    console.log(MOVIE_RESULT)
-    document.getElementsByClassName("top_film")[0].setAttribute("src", MOVIE_RESULT.image_url);
+    let movie = document.getElementsByClassName("top_film")[0];
+    movie.setAttribute("src", MOVIE_RESULT.image_url);
+    movie.setAttribute("onclick", "");
+    movie.onclick = function (){openTheModal(MOVIE_RESULT.url)};
     document.getElementsByClassName("top_resume")[0].getElementsByTagName("p")[0].innerHTML = MOVIE_RESULT.long_description;
     document.getElementsByClassName("titre_video")[0].innerHTML = MOVIE_RESULT.title;
 }
