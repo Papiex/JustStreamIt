@@ -1,0 +1,224 @@
+html {background-color: rgba(0, 0, 0, 0.822)}
+
+$text_color: whitesmoke;
+$font_size: 1.2em, 1.5em, 2em, 3em;
+
+@mixin button {
+    background: transparent;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    img {
+        max-width: 100px;
+        height: auto;
+    }
+    img:hover {
+        max-width: 100px;
+        height: auto;
+        cursor: pointer;
+    }
+}
+
+@keyframes animetest {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: 60px;
+    line-height: 60px;
+    background-color: rgb(26, 26, 26);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: $text_color;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0px 6px 18px 18px rgba(119, 119, 126, 0.2);
+    h1 {
+        font-size: nth($font_size, 4);
+        float: left;
+        margin: 0;
+        margin-left: 5%;
+    }
+    h1::before {
+        content: "\00a0\00a0\00a0";
+    }
+    a {
+        text-decoration: none;
+        color: $text_color;
+    }
+    ul {
+        float: right;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 50%;
+        font-size: nth($font_size, 3);;
+        li {
+            display: inline-block;
+            margin-left: 30px;
+            a:hover {
+                color: rgb(233, 59, 59);
+            }
+        }
+    }
+}
+
+.box1 {
+    background-color: rgb(26, 26, 26);
+    display: flex;
+    margin-top: 90px;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-shadow: 0px 6px 18px 18px rgba(119, 119, 126, 0.2);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: $text_color;
+    .titre_video {
+        margin-top: 10px;
+        margin-left: 375px;
+        margin-right: 25px;
+        font-size: nth($font_size, 4);
+        font-weight: bold;
+    }
+    .play {
+        font-size: nth($font_size, 2);
+        background-color: red;
+        border-radius: 15px;
+        margin-top: 20px;
+        margin-left: 460px;
+        margin-right: 100px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .top_resume {
+        font-size: nth($font_size, 1);
+        position: absolute;
+        margin-top: 50px;
+        text-align: center;
+        margin-left: 10%;
+        width: 30%;
+    }
+    .top_film {
+        width: 18%;
+        height: auto;
+        cursor: pointer;
+    }
+}
+
+.meilleurfilm, .titre_categorie {
+    color: $text_color;
+    margin-bottom: 60px;
+    font-size: nth($font_size, 3);
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif  
+}
+
+.carousel1, .carousel2, .carousel3, .carousel4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.element {
+    img {
+        max-width: 300px;
+        height: auto;
+        transform: scale(1.3);
+    }
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}
+
+.color_box {
+    background-color: rgb(26, 26, 26);
+    box-shadow: 0px 6px 18px 18px rgba(119, 119, 126, 0.2);
+    margin-top: 90px;
+    margin-bottom: 90px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+.buttonnext {
+    @include button();
+    &:hover {
+        margin-right: 5px;
+    &:active {
+        margin-right: 10px;
+    }
+    }
+}
+
+.buttonprev {
+    @include button();
+    &:hover {
+        margin-left: 5px;
+    }
+    &:active {
+        margin-left: 10px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0,0,0,0.4);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: $text_color;
+    #model_body{
+        div {
+            margin-top: 20px;
+        }
+    }
+    .modal_content {
+        background-color: rgb(26, 26, 26);
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        animation: animetest;
+        animation-duration: 0.6s;
+        overflow: auto;
+    }
+    .modal_movie_title {
+        position: fixed;
+        margin-left: 45%;
+        margin-top: -15px;
+    }
+    .movie_image {
+        float: left;
+        height: auto;
+        width: 25%;
+        margin-right: 20px;
+    }
+    .resume {
+        width: 80%;
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    &:hover, &:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
