@@ -1,17 +1,16 @@
 # JustStreamIt write with HTML, CSS and JavaScript
 
-- [Requirements](#requirements)
-- [GitBash](#gitbash)
-- [Installation](#installation)
-- [Preview](#preview)
+
+
+  - [Gitbash](#gitbash)
+  - [Installation](#installation)
+  - [Preview](#preview)
 
 ### This program allows you to 🠋
 - Consult the best films of four different categories resulting from a API database.
 - Slide movies in categories like netflix
 - See the information of a movie when you click on it
 
-## Requirements
-The API require Python for launching the server.
 ## Gitbash
 You have to clone the deposit with this command on gitbash and naviguate to the develop branch :
 ```
