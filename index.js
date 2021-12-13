@@ -79,7 +79,7 @@ function createBestMovieElement(location)
     location.appendChild(img);
     let div_box = createDivWithClass("element_box");
     location.appendChild(div_box);
-    let div = createDivWithClass("titre_video");
+    let div = createDivWithClass("movie_title");
     div_box.appendChild(div);
     div = createDivWithClass("play");
     div.innerHTML = "Play";
@@ -121,7 +121,7 @@ async function showTopMovie(genre)
     movie.onclick = function (){openTheModal(MOVIE_RESULT.url)};
     info_movie.onclick = function (){openTheModal(MOVIE_RESULT.url)};
     document.getElementsByClassName("top_resume")[0].getElementsByTagName("p")[0].innerHTML = MOVIE_RESULT.long_description;
-    document.getElementsByClassName("titre_video")[0].innerHTML = MOVIE_RESULT.title;
+    document.getElementsByClassName("movie_title")[0].innerHTML = MOVIE_RESULT.title;
 }
 
 function slidePrev(movies_list, location)
@@ -182,7 +182,7 @@ async function openTheModal(url)
             div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + response[div_element.className]);
         }
         if (response[div_element.className] === null) {
-            div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + " Unkown income");
+            div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + " Unknown income");
         }
         
     }

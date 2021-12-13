@@ -76,7 +76,7 @@ $font_size: 1.2em, 1.5em, 2em, 3em;
     box-shadow: 0px 6px 18px 18px rgba(119, 119, 126, 0.2);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: $text_color;
-    .titre_video {
+    .movie_title {
         margin-top: 10px;
         margin-left: 375px;
         margin-right: 25px;
@@ -124,7 +124,7 @@ $font_size: 1.2em, 1.5em, 2em, 3em;
     }
 }
 
-.meilleurfilm, .titre_categorie {
+#best_movie, #title_category {
     color: $text_color;
     margin-bottom: 60px;
     font-size: nth($font_size, 3);

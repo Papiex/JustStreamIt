@@ -84,7 +84,7 @@ html {
   color: whitesmoke;
 }
 
-.box1 .titre_video {
+.box1 .movie_title {
   margin-top: 10px;
   margin-left: 375px;
   margin-right: 25px;
@@ -137,7 +137,7 @@ html {
   cursor: pointer;
 }
 
-.meilleurfilm, .titre_categorie {
+#best_movie, #title_category {
   color: whitesmoke;
   margin-bottom: 60px;
   font-size: 2em;
