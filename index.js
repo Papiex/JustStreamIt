@@ -181,6 +181,10 @@ async function openTheModal(url)
         } else {
             div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + response[div_element.className]);
         }
+        if (response[div_element.className] === null) {
+            div_element.innerHTML = ("<u>" + div_element.className.toUpperCase() + "</u>" + " : " + " Unkown income");
+        }
+        
     }
 }
 
