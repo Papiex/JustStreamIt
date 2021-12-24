@@ -13,7 +13,7 @@ async function getBestMovies(genre)
     let url = PRINCIPAL_URL + String(genre);
     let search_result = await getInfoUrl(url);
     search_result = search_result.results
-    search_result.splice(7, 3)
+    search_result.splice(7, 3);
 
     return search_result;
 }
